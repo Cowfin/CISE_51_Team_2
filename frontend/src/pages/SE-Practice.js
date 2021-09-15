@@ -5,6 +5,7 @@ import tablecolumns from "../components/tablecolumns.js";
 import Dropdown from "../components/dropdown.js";
 
 import articles from "../dummydata/articles.js";
+import dropdownOptions from "../dummydata/dropdownOptions";
 
 const SEPractice = () => {
     return (
