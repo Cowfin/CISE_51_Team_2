@@ -1,25 +1,25 @@
 const tablecolumns = [
     {
       Header: 'Title',
-      accessor: 'title'
+      accessor: 'Title'
     }, {
       Header: 'Authors',
-      accessor: 'authors'
+      accessor: 'Authors'
     }, {
       Header: 'Source',
-      accessor: 'source'
+      accessor: 'Source'
     }, {
       Header: 'Pub. Year',
-      accessor: 'pubyear'
+      accessor: 'Year'
     },{
       Header: 'DOI',
-      accessor: 'doi'
+      accessor: 'DOI'
     },,{
       Header: 'Claimed Benefit',
-      accessor: 'claim'
+      accessor: 'Claim'
     },{
       Header: 'Level of Evidence',
-      accessor: 'evidence'
+      accessor: 'Evidence Level'
     }
   ]
 
