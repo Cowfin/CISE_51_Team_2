@@ -10,7 +10,7 @@ const ArticleSchema = new mongoose.Schema({
     required: true
   },
   Authors: {
-    type: String,
+    type: "array",
     required: true
   },
   Source: {
@@ -31,7 +31,12 @@ const ArticleSchema = new mongoose.Schema({
   Evidence_Level: {
       type: String,
       required: true
-  }
+  },
+  Practice: {
+    type: String,
+    required: true
+}
+
 });
 
 module.exports = Article = mongoose.model('article', ArticleSchema);
