@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SEPractices from "../dummydata/SEPractices";
+//import dropdownOptions from "../dummydata/dropdownOptions";
 
 const optionItems = SEPractices.map((SEPractice) =>
               <option key={SEPractice.practice}>{SEPractice.practice}</option>
   );
-
-  /*const Dropdown = () => { // Original
+            
+  const Dropdown = () => {
     return (
         <div>
              <select>
@@ -15,71 +16,18 @@ const optionItems = SEPractices.map((SEPractice) =>
          </div>
 
     )
-  }*/
-
-class Dropdown extends React.Component
-{
-  constructor(props) {
-    super(props);
-    this.state = {
-      practice: ''
-    };
-    //this.handleChange = this.handleChange.bind(this);
-  };
-
-  handleChange(e)
-  {
-    this.state.practice = e.value;
   }
-  getState()
+/*const Dropdown = (drop, title) => 
   {
-    return this.state;
-  }
-
-  render(){
+    const optionItems = dropdownOptions.map((option) =>
+    <option key={option.test}>{option.test}</option>);
+    const stringTitle = String(title);
     return (
       <div>
-        <select onChange={this.handleChange}>
-          <option value="" >Select an SE Practice </option>
+        <select>
+          <option value="' + stringTitle'"></option>
           {optionItems}
-        </select>
-      </div>
-    )
-  }
-}
-
-/*
-class Drop extends Component {
-  handleChange(e) {
-    console.log("Practice selected!");
-  };
-render(){
-return (
-      <div>
-        <select value='' onChange={this.handleChange}>
-          SEPractices.map((SEPractice) => (
-              <option key={SEPractice.id}>{SEPractice.practice}</option>
-              <option value={optionItems.id} >{optionItems.practice} </option>
-          ))
-          {optionItems}
-        </select>
-      </div>
-    )
-}
-}*/
-
-  
-
-
-
-  /*const Dropdown = (props) => {
-    
-    return (
-      <div>
-        <select onChange={props.setDropdownState(this.option.value)}>
-          <option value="" >Select an SE Practice </option>
-          {optionItems}
-        </select>
+        </select> 
       </div>
     )
   }*/

@@ -105,5 +105,14 @@
     "DOI": "https://doi.org/10.1007/978-3-030-36701-5_2",
     "Claim": "Code Quality Improvement",
     "Evidence_Level": "Weak support",
-    "Practice": "TDD"}
+    "Practice": "TDD"},
+{"ID": 13,
+    "Title": "RANDOM ARTICLE ON MOB",
+    "Authors": ["Choma, J.", "Guerra, E. M.", "Silva, T. S. da", "Albuquerque, T.", "Albuquerque, V. G.", "Zaina, L. M."],
+    "Source": "WBMA, 1106(1), 11–24.",
+    "Year": "2019",
+    "DOI": "https://doi.org/10.1007/978-3-030-36701-5_2",
+    "Claim": "MOB",
+    "Evidence_Level": "Weak support",
+    "Practice": "Mob programming"}
 ]

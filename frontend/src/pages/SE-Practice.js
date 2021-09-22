@@ -1,33 +1,37 @@
 import Styles from "../components/tablestyle.js";
 import Table from "../components/evidencetable.js";
 import tablecolumns from "../components/tablecolumns.js";
-import Dropdown from "../components/dropdown.js";
+
+//import Dropdown from "../components/dropdown.js";
 
 import axios from 'axios';
 import React, { Component } from 'react';
+import SEPractices from "../dummydata/SEPractices";
 
+const optionItems = SEPractices.map((SEPractice) =>
+              <option key={SEPractice.practice}>{SEPractice.practice}</option>
+  );
 
 class SEPractice extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      practiceSelection: '',
-      filteredArticles: [],
+      practice: '',
+      filteredarticles: [],
       articles: []
     };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  setDropdownState(practice)
-  {
-    this.state.practiceSelection = {};
-    console.log("STATE CHANGED");
-  }
 
   componentDidMount() {
     axios
       .get('http://localhost:8082/api/record')
       .then(res => {
         this.setState({
+          practice: 'All Practices',
+          filteredarticles: res.data,
           articles: res.data
         })
       })
@@ -36,52 +40,55 @@ class SEPractice extends Component {
       })
   };
 
+/*  filterArticles(article)
+  {
+    if(article.practice === this.practice)
+    {
+      this.filteredarticles.push(article.practice);
+      console.log("Filtered: " + article.practice);
+    }
+  }*/
+
+  handleChange(e) {
+    console.log("Practice Selected!! " + e.target.value);
+    this.state.practice = e.target.value;
+    //this.setState({ practice: e.target.value });
+    this.state.filteredarticles = [];
+    this.state.articles.forEach((article) => 
+    {
+      if(article.Practice === this.state.practice)
+      {
+        this.state.filteredarticles.push(article);
+      }
+      else if(this.state.practice == "All Practices")
+      {
+        this.state.filteredarticles = this.state.articles;
+      }
+    })
+    console.log(this.state.filteredarticles);
+    this.forceUpdate();
+  }
+
   render() {
     
     return (
       <div>
         <h2>Select SE Practice to get evidence for the claimed benefits</h2>
-          <Dropdown />
+          <div>
+            <select onChange={this.handleChange}>
+              <option value="">Select an SE Practice </option>
+              {optionItems}
+            </select>
+          </div>
           <Styles>
             <Table
-            data={this.state.articles}
+            data={this.state.filteredarticles}
             columns={tablecolumns}
             />
           </Styles>
       </div>
     );
   }
-} 
+}
 
 export default SEPractice; 
-
-function SelectColumnFilter({
-  column: { filterValue, setFilter, preFilteredRows, id },
-}) {
-  // Calculate the options for filtering
-  // using the preFilteredRows
-  const options = React.useMemo(() => {
-    const options = new Set()
-    preFilteredRows.forEach(row => {
-      options.add(row.values[id])
-    })
-    return [...options.values()]
-  }, [id, preFilteredRows])
-
-  // Render a multi-select box
-  return (
-    <select
-      value={filterValue}
-      onChange={e => {
-        setFilter(e.target.value || undefined)
-      }}
-    >
-      <option value="">All</option>
-      {options.map((option, i) => (
-        <option key={i} value={option}>
-          {option}
-        </option>
-      ))}
-    </select>
-  )
-}

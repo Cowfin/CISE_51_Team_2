@@ -29,8 +29,8 @@ const ArticleSchema = new mongoose.Schema({
     required: true
   },
   Evidence_Level: {
-      type: String,
-      required: true
+    type: String,
+    required: true
   },
   Practice: {
     type: String,
