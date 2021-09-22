@@ -11,10 +11,17 @@ class SEPractice extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      practiceSelection: '',
+      filteredArticles: [],
       articles: []
     };
   }
 
+  setDropdownState(practice)
+  {
+    this.state.practiceSelection = {};
+    console.log("STATE CHANGED");
+  }
 
   componentDidMount() {
     axios
@@ -34,13 +41,13 @@ class SEPractice extends Component {
     return (
       <div>
         <h2>Select SE Practice to get evidence for the claimed benefits</h2>
-              <Dropdown/>
-               <Styles>
-                 <Table
-                  data={this.state.articles}
-                  columns={tablecolumns}
-                 />
-              </Styles>
+          <Dropdown />
+          <Styles>
+            <Table
+            data={this.state.articles}
+            columns={tablecolumns}
+            />
+          </Styles>
       </div>
     );
   }
