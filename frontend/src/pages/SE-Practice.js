@@ -2,8 +2,6 @@ import Styles from "../components/tablestyle.js";
 import Table from "../components/evidencetable.js";
 import tablecolumns from "../components/tablecolumns.js";
 
-//import Dropdown from "../components/dropdown.js";
-
 import axios from 'axios';
 import React, { Component } from 'react';
 import SEPractices from "../dummydata/SEPractices";
@@ -40,19 +38,9 @@ class SEPractice extends Component {
       })
   };
 
-/*  filterArticles(article)
-  {
-    if(article.practice === this.practice)
-    {
-      this.filteredarticles.push(article.practice);
-      console.log("Filtered: " + article.practice);
-    }
-  }*/
-
   handleChange(e) {
-    console.log("Practice Selected!! " + e.target.value);
+    //console.log("Practice Selected!! " + e.target.value);
     this.state.practice = e.target.value;
-    //this.setState({ practice: e.target.value });
     this.state.filteredarticles = [];
     this.state.articles.forEach((article) => 
     {
@@ -65,7 +53,7 @@ class SEPractice extends Component {
         this.state.filteredarticles = this.state.articles;
       }
     })
-    console.log(this.state.filteredarticles);
+    //console.log(this.state.filteredarticles);
     this.forceUpdate();
   }
 

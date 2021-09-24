@@ -8,10 +8,7 @@ const {
     headerGroups,
     prepareRow,
     
-    page, // Instead of using 'rows', we'll use page,
-    // which has only the rows for the active page
-
-    // The rest of these things are super handy, too ;)
+    page,
     canPreviousPage,
     canNextPage,
     pageOptions,
@@ -32,7 +29,6 @@ const {
     usePagination
   )
 
-  // Render Data Table UI
   return (
     <>
       <table {...getTableProps()}>
@@ -40,8 +36,6 @@ const {
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
-                // Add the sorting props to control sorting. For this example
-                // we can add them into the header props
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render('Header')}
                   {/* Add a sort direction indicator */}
