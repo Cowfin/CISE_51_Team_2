@@ -1,0 +1,4 @@
+{
+    "mongoURI":
+      "mongodb+srv://team:team@cise-speed.zowl2.mongodb.net/connectiontest?retryWrites=true&w=majority"
+  }
