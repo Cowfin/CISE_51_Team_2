@@ -16,4 +16,3 @@ jobs:
           heroku_app_name: "mfk-cise-seper" #Must be unique in Heroku
           heroku_email: "wongkelvin279@gmail.com"
           appdir: "" # <- This will point to the api folder in your project
-          procfile: "web:node app.js"
