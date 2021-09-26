@@ -34,7 +34,7 @@ const ArticleSchema = new mongoose.Schema({
   },
   Practice: {
     type: String,
-    required: true
+    required: true 
 }
 
 });
