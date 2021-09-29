@@ -62,7 +62,6 @@ class SEPractice extends Component {
         <h2>Select SE Practice to get evidence for the claimed benefits</h2>
           <div>
             <select onChange={this.handleChange}>
-              <option value="">Select an SE Practice </option>
               {optionItems}
             </select>
           </div>

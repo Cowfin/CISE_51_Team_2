@@ -39,7 +39,7 @@ class SubmitArticle extends Component
         };
 
         axios
-            .post('http://localhost:8082/api/record', data)
+            .post('https://mfk-cise-seper.herokuapp.com/api/record', data)
             .then(res => {
                 this.setState({
                     Title: '',
