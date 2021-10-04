@@ -22,10 +22,10 @@ class SEPractice extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-
   componentDidMount() {
     axios
-      .get('https://mfk-cise-seper.herokuapp.com/api/record')
+      //.get('https://mfk-cise-seper.herokuapp.com/api/record')
+      .get('http://localhost:8082/api/record')
       .then(res => {
         this.setState({
           practice: 'All Practices',
