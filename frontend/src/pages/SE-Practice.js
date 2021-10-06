@@ -14,22 +14,22 @@ class SEPractice extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      practice: '',
-      filteredarticles: [],
+      selectedPractice: '',
+      filteredArticles: [],
       articles: []
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
-
   componentDidMount() {
     axios
-      .get('https://mfk-cise-seper.herokuapp.com/api/record')
+      //.get('https://mfk-cise-seper.herokuapp.com/api/record')
+      .get('http://localhost:8082/api/record')
       .then(res => {
         this.setState({
           practice: 'All Practices',
-          filteredarticles: res.data,
+          filteredArticles: res.data,
           articles: res.data
         })
       })
@@ -38,22 +38,20 @@ class SEPractice extends Component {
       })
   };
 
-  handleChange(e) {
-    //console.log("Practice Selected!! " + e.target.value);
-    this.state.practice = e.target.value;
-    this.state.filteredarticles = [];
+  handleChange(practiceSelection) {
+    this.state.selectedPractice = practiceSelection.target.value;
+    this.state.filteredArticles = [];
     this.state.articles.forEach((article) => 
     {
-      if(article.Practice === this.state.practice)
+      if(article.Practice === this.state.selectedPractice)
       {
-        this.state.filteredarticles.push(article);
+        this.state.filteredArticles.push(article);
       }
-      else if(this.state.practice == "All Practices")
+      else if(this.state.selectedPractice == "All Practices")
       {
-        this.state.filteredarticles = this.state.articles;
+        this.state.filteredArticles = this.state.articles;
       }
     })
-    //console.log(this.state.filteredarticles);
     this.forceUpdate();
   }
 
@@ -64,13 +62,12 @@ class SEPractice extends Component {
         <h2>Select SE Practice to get evidence for the claimed benefits</h2>
           <div>
             <select onChange={this.handleChange}>
-              <option value="">Select an SE Practice </option>
               {optionItems}
             </select>
           </div>
           <Styles>
             <Table
-            data={this.state.filteredarticles}
+            data={this.state.filteredArticles}
             columns={tablecolumns}
             />
           </Styles>
