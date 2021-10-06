@@ -20,14 +20,14 @@ const isYearValid = (year) => {
     }
 }
 
-test('Test year in submission form is populated', () => {
+it('Test year in submission form is populated', () => {
     expect(isYearValid(2021)).toBe(true)
 })
 
 /*************************************************************************/
 
 
-
+/*
 const updateDomWithSelection = () =>{
     import SEPractices from "../dummydata/SEPractices";
     const practiceSelection = document.querySelector('.select').value;
@@ -49,7 +49,7 @@ test("Test the dropdown selection functions as intended", () => {
 })
 
 
-/*
+
 practiceSelect = e =>
     {
       this.state.Practice = String(e.target.value);

@@ -78,7 +78,7 @@ class SubmitArticle extends Component
             <div className="row">
               <div className="col-md-8 m-auto">
                 <h1 className="display-4 text-center">Submit Article</h1>  
-                <form noValidate onSubmit={this.onSubmit}>
+                <form id="submitform" noValidate onSubmit={this.onSubmit}>
                   <div className='form-group'>
                     <input
                       type='text'
@@ -145,7 +145,7 @@ class SubmitArticle extends Component
                   </div>
                   <br />
 
-                  <input
+                  <input id="submitbutton"
                       type="submit"
                       className="btn btn-outline-warning btn-block mt-4"
                   />
