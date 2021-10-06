@@ -24,8 +24,8 @@ class SEPractice extends Component {
 
   componentDidMount() {
     axios
-      //.get('https://mfk-cise-seper.herokuapp.com/api/record')
-      .get('http://localhost:8082/api/record')
+      .get('https://mfk-cise-seper.herokuapp.com/api/record')
+      //.get('http://localhost:8082/api/record')
       .then(res => {
         this.setState({
           practice: 'All Practices',
