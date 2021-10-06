@@ -1,5 +1,5 @@
 const isTextValid = (title, authors, source) => {
-    texts = [title, authors, source];
+    let texts = [title, authors, source];
     for(let i = 0; i < 3; i++){
         if(texts[i] == ""){
             return false;
@@ -8,9 +8,9 @@ const isTextValid = (title, authors, source) => {
     return true;
 }
 
-test('Test strings in submission form are populated', () => {
+/*test('Test strings in submission form are populated', () => {
     expect(isTextValid("ABC", "DEF", "GHI")).toBe(true)
-})
+})*/
 
 /*************************************************************************/
 
@@ -20,10 +20,11 @@ const isYearValid = (year) => {
     }
 }
 
-it('Test year in submission form is populated', () => {
+/*it('Test year in submission form is populated', () => {
     expect(isYearValid(2021)).toBe(true)
-})
+})*/
 
+exports.modules = {isTextValid, isYearValid};
 /*************************************************************************/
 
 

@@ -1,14 +1,8 @@
-import React from "react";
+/*import React from "react";
 import { shallow, mount } from "enzyme";
 import App from '../App';
 import SubmitArticle from '../pages/Submit-Article';
 import toJson from "enzyme-to-json";
-
-const user = {
-    name: "Adeneye David",
-    email: "david@gmail.com",
-    username: "Dave",
-  };
 
   const data = 
   {
