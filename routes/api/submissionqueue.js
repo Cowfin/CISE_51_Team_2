@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// Load Article model
+// Load Submission model
 const Submission = require('../../models/Submission.js');
 
 // @route GET api/articles/test

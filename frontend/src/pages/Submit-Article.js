@@ -36,8 +36,6 @@ class SubmitArticle extends Component
           Source:'',
           Year:'',
           DOI:'',
-          Claim:'',
-          Evidence_Level:'',
           Practice:''
         };
     }
@@ -59,13 +57,11 @@ class SubmitArticle extends Component
           Source: this.state.Source,
           Year: this.state.Year,
           DOI: this.state.DOI,
-          Claim: ' ',
-          Evidence_Level: ' ',
           Practice: this.state.Practice
         };
         axios
-          .post('https://mfk-cise-seper.herokuapp.com/api/record', data)
-          //.post('http://localhost:8082/api/record', data)
+          .post('https://mfk-cise-seper.herokuapp.com/api/submissionqueue', data)
+          //.post('http://localhost:8082/api/submissionqueue', data)
           .then(res => {
             this.setState({
               ID: 0,
@@ -74,8 +70,6 @@ class SubmitArticle extends Component
               Source:'',
               Year: 0,
               DOI:'',
-              Claim:'',
-              Evidence_Level:'',
               Practice:''
             })
             this.props.history.push('/SEPractice');
