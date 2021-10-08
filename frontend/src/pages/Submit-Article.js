@@ -40,7 +40,6 @@ class SubmitArticle extends Component
         };
     }
     
-    
     onChange = e => 
     {
         this.setState({ [e.target.name]: e.target.value });
@@ -72,7 +71,7 @@ class SubmitArticle extends Component
               DOI:'',
               Practice:''
             })
-            this.props.history.push('/SEPractice');
+            this.props.history.push('/');
           })
           .catch(err => {
             console.log("Error in Submit Article! " + err);
