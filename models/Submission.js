@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ArticleSchema = new mongoose.Schema({
+const SubmissionSchema = new mongoose.Schema({
   ID: {
     type: 'number',
     required: true
@@ -30,4 +30,4 @@ const ArticleSchema = new mongoose.Schema({
 }
 });
 
-module.exports = Article = mongoose.model('article', ArticleSchema);
+module.exports = Submission = mongoose.model('submission', SubmissionSchema);

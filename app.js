@@ -6,6 +6,7 @@ var cors = require('cors');
 
 // routes
 const records = require('./routes/api/record');
+const submissionqueue = require('./routes/api/submissionqueue');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(express.json({ extended: false }));
 
 // use Routes
 app.use('/api/record', records);
+app.use('/api/submissionqueue', submissionqueue);
 
 if(process.env.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname, "/frontend/build")));
